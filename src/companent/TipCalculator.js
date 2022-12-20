@@ -10,14 +10,13 @@ function TipCalculator() {
       [nameInput]: value,
     });
   };
+  const total = (result.bill * result.tip) / 100 / result.people;
   const AddTotal = () => {
-    const total = (result.bill * result.tip) / 100 / result.people;
-
-    if (total === Infinity) {
+    if (result.people === "" || result.people === "0") {
       return (
         <>
-          <p>Total Tip: -</p>
-          <p>Tip Per Person: -</p>
+          <p>Total Tip: --</p>
+          <p>Tip Per Person: --</p>
         </>
       );
     } else {
